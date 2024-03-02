@@ -295,7 +295,7 @@ static int __init zfw_mod_init(void){
 	//注册字符设备(通过把驱动程序以字符设备形式注册到内核，并且自动生成设备节点，使得用户可以访问到我们的驱动
 	ret = register_chrdev(DEVICE_MAJOR_NUM, DEVICE_INTF_NAME, &zfw_dev_fop);
 	//arg1:动态申请字符设备的主设备号
-	//arg2:代表申请设备的设备号
+	//arg2:代表申请设备的设备名
 	//arg3:struct file_operations结构体类型的指针,代表申请设备的操作函数
 	if(ret<0){// =0success =-ENOMEM即-12fail
 		printk(KERN_ALERT "zFirewall: Fails to start due to device register\n");
