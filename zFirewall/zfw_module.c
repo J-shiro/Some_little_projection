@@ -322,7 +322,7 @@ static void __exit zfw_mod_cleanup(void){
 
 	kfree(Buffer);
 
-	list_for_each_entry_safe(nodep, ntmp,&In_lhead, list) {	//nodep
+	list_for_each_entry_safe(nodep, ntmp,&In_lhead, list) {	//nodep当前指针, ntmp下一个指针
 		list_del(&(nodep->list));
 		kfree(nodep);
 		printk(KERN_INFO "zFirewall: Deleted inbound rule %p\n",nodep);
